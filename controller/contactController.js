@@ -1,5 +1,5 @@
 import asyncHandler from "express-async-handler"
-import { contactModel } from "../models/contactModel"
+import { contactModel } from "../models/contactModel.js"
 
 //@desc get all contacts
 //@route Get /api/contacts

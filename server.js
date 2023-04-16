@@ -2,12 +2,13 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { router } from "./routes/contactRoutes.js";
 import { errorHandler } from './middleware/errorHandler.js';
+import { connectDB } from './config/dbConnection.js';
 
-dotenv.config()
+dotenv.config();
+connectDB();
 
 const app = express();
 const PORT = process.env.PORT || 3000 //  || Math.ceil(Math.random() * 2) + 3000;
-
 
 app.use(express.json())
 app.use("/api/contacts", router)
@@ -15,7 +16,7 @@ app.use(errorHandler)
 
 app.listen(PORT, () => {
     console.log(` localhost:${PORT}`);
-    console.log('wait... browser is open');
+    // console.log('wait... browser is open');
 })
 
 
