@@ -6,6 +6,7 @@ import {
     updateContact,
     deleteContact
 } from '../controller/contactController.js';
+import { validateToken } from '../middleware/validateTokenHandler.js';
 
 const router = express.Router()
 
@@ -14,6 +15,7 @@ router.route("/")
     .post(createContact);
 
 
+router.use(validateToken)
 router.route("/:id")
     .get(getContact)
     .put(updateContact)
