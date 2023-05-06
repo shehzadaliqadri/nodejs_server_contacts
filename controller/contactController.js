@@ -1,7 +1,6 @@
 import asyncHandler from "express-async-handler"
 import { contactModel as Contact } from "../models/contactModel.js"
 
-
 //@desc get all contacts
 //@route Get /api/contacts
 //@access private
