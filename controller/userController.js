@@ -62,13 +62,20 @@ const loginUser = asyncHandler(async (req, res) => {
             process.env.ACCESS_TOKEN_SECRET,
             { expiresIn: "15m" }
         );
+        let time = new Date()
+
+        time = new Date(
+            time.getTime() + (15 * 60 * 1000)
+        );
+        // console.log(time)
+
+        console.log("Token expires in 15 minutes at ", time.toLocaleTimeString())
         res.status(200).json({ accessToken })
     } else {
         res.status(401)
         throw new Error("email or password is not valid")
     }
 })
-
 
 //@desc Current User Info
 //@route Get /api/users/current
