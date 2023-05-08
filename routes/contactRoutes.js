@@ -1,24 +1,19 @@
-import express from 'express';
+import express from "express";
 import {
-    getContacts,
-    getContact,
-    createContact,
-    updateContact,
-    deleteContact
-} from '../controller/contactController.js';
-import { validateToken } from '../middleware/validateTokenHandler.js';
+  getContacts,
+  getContact,
+  createContact,
+  updateContact,
+  deleteContact,
+} from "../controller/contactController.js";
+import { validateToken } from "../middleware/validateTokenHandler.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.use(validateToken)
+router.use(validateToken);
 
-router.route("/")
-    .get(getContacts)
-    .post(createContact);
+router.route("/").get(getContacts).post(createContact);
 
-router.route("/:id")
-    .get(getContact)
-    .put(updateContact)
-    .delete(deleteContact);
+router.route("/:id").get(getContact).put(updateContact).delete(deleteContact);
 
-export { router }
+export { router };
