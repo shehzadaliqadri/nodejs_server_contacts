@@ -4,6 +4,9 @@
   "description": "shehzad node server",
   "main": "server.js",
   "type": "module",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
